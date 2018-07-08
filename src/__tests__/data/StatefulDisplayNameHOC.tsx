@@ -17,6 +17,7 @@ function hoc() {
 }
 
 /** Statefull description */
+// tslint:disable-next-line:max-classes-per-file
 export class Stateful extends React.Component<StatefulProps> {
   static displayName = 'StatefulDisplayName';
 

@@ -19,5 +19,6 @@ const shorthandProp = 123;
 StatelessShorthandDefaultProps.defaultProps = {
   regularProp: 'foo',
   shorthandProp,
+  // tslint:disable-next-line:no-empty
   onCallback() {}
 };
