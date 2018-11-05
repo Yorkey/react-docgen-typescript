@@ -682,9 +682,12 @@ function computeComponentName(exp: ts.Symbol, source: ts.SourceFile) {
 export function getDefaultExportForFile(source: ts.SourceFile) {
     const name = path.basename(source.fileName, path.extname(source.fileName));
 
-    return name === 'index'
+    const fileName = name === 'index'
       ? path.basename(path.dirname(source.fileName))
       : name;
+  
+    return fileName.replace(/^[a-z]/, g => g.toUpperCase())
+      .replace(/\-\w/g, g => g[1].toUpperCase());
 }
 
 function getParentType(prop: ts.Symbol): ParentType | undefined {
